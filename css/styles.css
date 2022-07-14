@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  --mainbackground: hsl(233, 47%, 7%);
+  --cardbackground: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+
+  --mainheadingstats: hsl(0, 0%, 100%);
+  --mainparagraph: hsla(0, 0%, 100%, 0.75);
+  --statheadings: hsla(0, 0%, 100%, 0.6);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Inter";
+  font-weight: 400;
+  background-color: var(--mainbackground);
+  color: var(--mainheadingstats);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.container {
+  background-color: var(--cardbackground);
+  max-height: 45rem;
+  max-width: 110rem;
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 0.5rem;
+}
+.content {
+  flex: 1;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.title span {
+  color: var(--accent);
+}
+.description {
+  color: var(--mainparagraph);
+  font-family: "Lexend Duca", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 2rem 0;
+}
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.counts {
+  padding-top: 0.5rem;
+}
+.counts h2 {
+  font-size: 2rem;
+}
+.counts small {
+  text-transform: uppercase;
+  color: var(--statheadings);
+  font-size: 1.5rem;
+}
+.image-holder {
+  flex: 1;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--accent);
+  opacity: 0.5;
+}
+.image-holder img {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  max-width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    border-radius: 1rem;
+    max-height: 100%;
+    padding-bottom: 3rem;
+  }
+  .image-holder img {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
+  .title {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .description {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .content {
+    padding: 0;
+    text-align: center;
+  }
+  .counter {
+    flex-direction: column;
+  }
+}
